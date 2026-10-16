@@ -216,3 +216,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# lineback local data
+*.db
+*.db-wal
+*.db-shm
+
+
+call-agent-steps-1-3.patch

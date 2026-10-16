@@ -1,7 +1,7 @@
 [project]
 name = "lineback"
 version = "0.1.0"
-description = "Add your description here"
+description = "Webhook backend for the Tundrel voice agent: records HVAC appointment requests from Vapi calls and notifies the owner."
 readme = "README.md"
 authors = [
     { name = "YumgNPO", email = "orumerenyerhovwo@gmail.com" }
@@ -9,6 +9,7 @@ authors = [
 requires-python = ">=3.14"
 dependencies = [
     "fastapi>=0.141.1",
+    "pydantic>=2.13.4",
     "python-dotenv>=1.2.2",
     "uvicorn>=0.52.1",
 ]
@@ -19,3 +20,12 @@ lineback = "lineback:main"
 [build-system]
 requires = ["uv_build>=0.12.1,<0.13.0"]
 build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "httpx2>=2.13.1",
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
